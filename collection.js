@@ -11,9 +11,7 @@ function query() {
  } else {
     var operations = [].slice.call(arguments, 1);
     operations.sort();
-   //console.log(operations);
-   //operations[0](copyCol);
-   //operations[1](copyCol);
+   
    for (var operation of operations) {
     (copyCol = operation(copyCol));
    }
@@ -39,7 +37,7 @@ return function selectKeys (collection) {
     
     return collection;
 }
-//retutn ['select', fieldList];
+
 }
 
 /**
@@ -51,7 +49,6 @@ function filterIn(property, values) {
     var property = filterElems[0];
     var values = filterElems[1];
     return function filterValue(collection){
-        //var collectionArr = [].slice.call(collection);
         var newCol = [];
         collection.filter(function(elem) {
             var currentPropertyValue = elem[property];
@@ -61,7 +58,7 @@ function filterIn(property, values) {
         })
         return newCol;
     }
-    //return ['filterIn', filterElems];
+    
 }
 
 module.exports = {
